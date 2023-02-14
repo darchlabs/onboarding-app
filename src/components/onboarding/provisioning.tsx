@@ -5,6 +5,7 @@ import { useProjectState, useProjectDispatch } from "../../hooks/use-project";
 import { ProjectActionKind } from "../../providers";
 import { ProjectState } from "../../providers/project/type";
 import { useNavigate } from "react-router-dom";
+import { ConsoleWriter } from "istanbul-lib-report";
 
 const { REACT_APP_ONBOARDING_URL } = process.env;
 
@@ -105,6 +106,7 @@ export function OnboardingProvisioning() {
 
     // case when request implement infrastructure
     if (!ready) {
+      console.log("before", credentialsK8sConfig);
       post(`${REACT_APP_ONBOARDING_URL}/api/v1/projects`, {
         project: {
           name,
@@ -136,9 +138,12 @@ export function OnboardingProvisioning() {
     }
 
     // download files
-    newFile("info", `user: ${sshUser}\nip: ${ip}\nurl: ${url}\nport: 22`, "txt");
-    newFile("private_key", privateKey, "pem");
-    newFile("public_key", publicKey, "pem");
+    if (cloudProvider === "aws" || cloudProvider === "azure" || cloudProvider === "do" || cloudProvider === "gcp") {
+      newFile("info", `user: ${sshUser}\nip: ${ip}\nurl: ${url}\nport: 22`, "txt");
+      newFile("private_key", privateKey, "pem");
+      newFile("public_key", publicKey, "pem");
+    }
+
     newFile("kube_config", kubeConfig, "yaml");
   };
 

@@ -1,7 +1,7 @@
 import OnBoardingBase from "./base";
 import { useProjectState } from "../../hooks/use-project";
 import { CloudProvider } from "../../providers/project";
-import { CredentialAWS, CredentialDO } from "./credentials";
+import { CredentialAWS, CredentialDO, CredentialK8s } from "./credentials";
 
 export function OnboardingCredential() {
   // define hooks
@@ -13,6 +13,8 @@ export function OnboardingCredential() {
         return <CredentialAWS />;
       case "do":
         return <CredentialDO />;
+      case "k8s":
+        return <CredentialK8s />;
       default:
     }
 
