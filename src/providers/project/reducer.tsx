@@ -38,6 +38,13 @@ export function onboardingReducer(state: ProjectState, action: ProjectAction): P
       return {
         ...state,
         credentialsK8sConfig: action.payload.config,
+
+        // clean other providers
+        credentialsAwsAccessKeyId: undefined,
+        credentialsAwsSecretAccessKey: undefined,
+        credentialsAwsRegion: undefined,
+        credentialsDoToken: undefined,
+        credentialsDoRegion: undefined,
       };
     }
     case ProjectActionKind.SET_CLOUD_AWS: {
@@ -46,6 +53,11 @@ export function onboardingReducer(state: ProjectState, action: ProjectAction): P
         credentialsAwsAccessKeyId: action.payload.accessKeyId,
         credentialsAwsSecretAccessKey: action.payload.secretAccessKey,
         credentialsAwsRegion: action.payload.region,
+
+        // clean other providers
+        credentialsK8sConfig: undefined,
+        credentialsDoToken: undefined,
+        credentialsDoRegion: undefined,
       };
     }
     case ProjectActionKind.SET_CLOUD_DO: {
@@ -53,6 +65,12 @@ export function onboardingReducer(state: ProjectState, action: ProjectAction): P
         ...state,
         credentialsDoToken: action.payload.token,
         credentialsDoRegion: action.payload.region,
+
+        // clean other providers
+        credentialsK8sConfig: undefined,
+        credentialsAwsAccessKeyId: undefined,
+        credentialsAwsSecretAccessKey: undefined,
+        credentialsAwsRegion: undefined,
       };
     }
     case ProjectActionKind.SET_READY: {

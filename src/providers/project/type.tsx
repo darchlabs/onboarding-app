@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { ArrayDestructuringAssignment } from "typescript";
 
 export type ProjectState = {
   name: string;
@@ -19,6 +18,8 @@ export type ProjectState = {
   provisioning: boolean;
   ready: boolean;
   error: Error | undefined;
+
+  // result: {};
 
   url: string;
   ip: string;
@@ -49,7 +50,7 @@ export enum ProjectActionKind {
 
 export type Environment = "development" | "production";
 export type WalletProvider = "metamask" | "walletconnect";
-export type CloudProvider = "kubernetes" | "aws" | "azure" | "do" | "gcp";
+export type CloudProvider = "k8s" | "aws" | "azure" | "do" | "gcp";
 
 export type K8SCredential = {
   config: string;
