@@ -29,15 +29,17 @@ WORKDIR home/app
 COPY --from=builder usr/src/app/onboarding-api  /home/app/onboarding-api
 
 COPY ./package.json ./
+COPY ./package-lock.json ./
+COPY ./init.sh ./
 
 RUN npm install
 
 COPY . .
 
 RUN npm run build
+RUN ["chmod", "+x", "/usr/src/app/docker-entrypoint.sh"]
 
 ENV NODE_ENV=production
+ENV ONBOARDING_PORT=5800
 
-RUN ./onboarding
-
-RUN ["npx", "serve", "build"]
+CMD ./init.sh
