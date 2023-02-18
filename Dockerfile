@@ -1,7 +1,7 @@
-## 1 st clone
-FROM ubuntu as infra
+# 1 st clone
+FROM ubuntu as onboarding
 
-WORKDIR /home
+WORKDIR /home/onboarding
 
 RUN apt-get -y update
 
@@ -12,9 +12,11 @@ RUN git clone https://github.com/darchlabs/infra.git
 ## 2nd build
 FROM golang as builder
 
-WORKDIR /urs/src/app
+WORKDIR /usr/src/app
 
-COPY --from=infra home/infra/. /usr/src/app/.
+COPY --from=onboarding home/onboarding/infra/. /usr/src/app/.
+
+RUN go mod download
 
 RUN go build -o onboarding-api cmd/onboarding/main.go
 
@@ -24,7 +26,7 @@ FROM node:16
 
 WORKDIR home/app
 
-COPY --from=build usr/src/app/onboarding-api  /home/app/onboarding-api
+COPY --from=builder usr/src/app/onboarding-api  /home/app/onboarding-api
 
 COPY ./package.json ./
 
@@ -39,5 +41,3 @@ ENV NODE_ENV=production
 RUN ./onboarding
 
 RUN ["npx", "serve", "build"]
-
-
