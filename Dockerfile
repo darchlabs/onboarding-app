@@ -32,12 +32,12 @@ COPY ./package.json ./
 COPY ./package-lock.json ./
 COPY ./init.sh ./
 
-RUN npm install
+RUN npm ci
 
 COPY . .
 
 RUN npm run build
-RUN ["chmod", "+x", "/usr/src/app/docker-entrypoint.sh"]
+RUN ["chmod", "+x", "/home/app/init.sh"]
 
 ENV NODE_ENV=production
 ENV ONBOARDING_PORT=5800
