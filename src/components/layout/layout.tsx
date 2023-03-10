@@ -12,9 +12,10 @@ export default function Layout({ children }: { children: JSX.Element | string })
   return (
     <Box display={"flex"} minH="100vh" bgColor={"#E1E3E6"} justifyContent={"center"} alignItems={"center"}>
       {children}
-      <Button onClick={handleClick} position={"absolute"} right={"3%"} bottom={"2%"}>
+      {/* TODO(ca): implement this for using en dev mode */}
+      {/* <Button onClick={handleClick} position={"absolute"} right={"3%"} bottom={"2%"}>
         ❌
-      </Button>
+      </Button> */}
     </Box>
   );
 }
