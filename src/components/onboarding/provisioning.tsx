@@ -98,7 +98,7 @@ export function OnboardingProvisioning() {
     // redirect to first step when error is unknow
     if (error && error.message && error.message.length > 0 && !Object.values(errors).includes(error.message)) {
       dispatch({ type: ProjectActionKind.CLEAR_ERROR });
-      return navigate("/");
+      return navigate("/password");
     } else if (error?.message) {
       dispatch({ type: ProjectActionKind.PROVISIONING_CLEAR });
       return navigate("/cloud-provider");
