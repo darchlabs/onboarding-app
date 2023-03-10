@@ -11,7 +11,7 @@ export function Principal() {
   return (
     <VStack w={"full"} h={"full"} bgColor={"white"}>
       <VStack spacing={20} bgColor={"white"} w={"full"} h={"full"} display={"flex"} alignContent={"center"}>
-        <Text textAlign={"center"} pt={32}>
+        <Text textAlign={"center"} pt={48}>
           <Text fontSize={["3xl", "4xl", "5xl"]} fontWeight="bold" color="pink.400">
             Revolutionizing Web3
           </Text>
