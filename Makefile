@@ -49,12 +49,15 @@ check-aws:
 	fi
 	@if [ -z "$(AWS_ACCESS_KEY_ID)" ]; then \
 		echo "Error: AWS_ACCESS_KEY_ID env value is not defined"; \
+		exit 1; \
 	fi
 	@if [ -z "$(AWS_SECRET_ACCESS_KEY)" ]; then \
 		echo "Error: AWS_SECRET_ACCESS_KEY env value is not defined"; \
+		exit 1; \
 	fi
 	@if [ -z "$(AWS_DEFAULT_REGION)" ]; then \
 		echo "Error: AWS_DEFAULT_REGION env value is not defined"; \
+		exit 1; \
 	fi
 
 deploy: clear build check-aws
