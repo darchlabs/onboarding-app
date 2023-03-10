@@ -1,12 +1,12 @@
-import {ColorModeScript} from "@chakra-ui/react";
+import { ColorModeScript } from "@chakra-ui/react";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {App} from "./App";
+import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
 
 // load and check env values
-const {REACT_APP_ONBOARDING_URL} = process.env;
+const { REACT_APP_ONBOARDING_URL } = process.env;
 if (REACT_APP_ONBOARDING_URL === undefined || REACT_APP_ONBOARDING_URL === "") {
   throw new Error("invalid REACT_APP_ONBOARDING_URL value");
 }

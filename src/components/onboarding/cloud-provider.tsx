@@ -8,7 +8,7 @@ import { useProjectState, useProjectDispatch } from "../../hooks/use-project";
 
 function getIcon(cloudProvider: CloudProvider) {
   switch (cloudProvider) {
-    case "kubernetes":
+    case "k8s":
       return <Icon as={KubernetesIcon} w={"120px"} h={"21px"} />;
     case "aws":
       return <Icon mt={"4px"} as={AWSIcon} w={"90px"} h={"45px"} />;
@@ -131,7 +131,7 @@ export function OnboardingCloudProvider() {
       <FormControl>
         <VStack pt={5} alignItems={"start"} width={"full"}>
           <Grid templateColumns="repeat(2, 1fr)" gap={5} w={"full"} pb={5}>
-            {GetGridItem("kubernetes")}
+            {GetGridItem("k8s")}
             {GetGridItem("aws")}
             {GetGridItem("azure")}
             {GetGridItem("do")}

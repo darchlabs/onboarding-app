@@ -12,11 +12,17 @@ import {
   OnboardingProvisioning,
 } from "./components/onboarding";
 
+import { Home } from "./components/landing";
+
 import { ProjectProvider } from "./providers/project";
 
 const router = createBrowserRouter([
   {
-    path: "/", // welcome and configure admin password
+    path: "/", // TODO(ca): should move to "/" path
+    element: <Home />,
+  },
+  {
+    path: "/password", // welcome and configure admin password
     element: <OnboardingAdminPassword />,
   },
   {

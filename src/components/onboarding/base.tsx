@@ -22,7 +22,7 @@ export default function OnboardingBase({
       borderStyle={"solid"}
       bgColor={"white"}
       p={8}
-      maxW={"400px"}
+      maxW={"800px"}
       minW={"400px"}
     >
       <Icon as={LogoIcon} w={"135px"} h={"66px"} mb={6} />
