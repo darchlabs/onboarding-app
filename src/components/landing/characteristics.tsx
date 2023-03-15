@@ -33,7 +33,13 @@ function Characteristic({
       >
         {top}
       </Text>
-      <Text fontWeight={"bold"} fontSize={["xl", "xl", "2xl"]} color={"blackAlpha.800"} lineHeight={"30px"} pt={3}>
+      <Text
+        fontWeight={"bold"}
+        fontSize={["xl", "xl", "2xl"]}
+        color={"blackAlpha.800"}
+        lineHeight={"30px"}
+        pt={3}
+      >
         {tittle}
       </Text>
       <Text
@@ -50,7 +56,11 @@ function Characteristic({
   );
 }
 
-const characteristics: { top: string; tittle: string | JSX.Element; description: string }[] = [
+const characteristics: {
+  top: string;
+  tittle: string | JSX.Element;
+  description: string;
+}[] = [
   {
     top: "synchronizers",
     tittle: (
@@ -63,9 +73,11 @@ const characteristics: { top: string; tittle: string | JSX.Element; description:
         <Text as={"span"} color={"pink.400"}>
           easy
         </Text>
+        way
       </Text>
     ),
-    description: "Access on-chain data easily, speedup dApp development, and improve experience.",
+    description:
+      "Access on-chain data easily, speedup dApp development, and improve experience.",
   },
   {
     top: "jobs",
@@ -82,7 +94,7 @@ const characteristics: { top: string; tittle: string | JSX.Element; description:
       </Text>
     ),
     description:
-      "Perform smart contract operations on a set schedule based making dApps more autonomous and self-sufficient.",
+      "Perform smart contract transactions based on a cronjob and on-chain logic in a flexible way, with cheap costs.",
   },
   {
     top: "nodes",
@@ -107,12 +119,23 @@ const characteristics: { top: string; tittle: string | JSX.Element; description:
 export function Characteristics(): JSX.Element {
   return (
     <VStack bgColor={"white"} pl={5} pr={5}>
-      <Text pt={40} pb={10} lineHeight={"24px"} fontSize={["3xl", "4xl"]} color={"pink.400"}>
+      <Text
+        pt={40}
+        pb={10}
+        lineHeight={"24px"}
+        fontSize={["3xl", "4xl"]}
+        color={"pink.400"}
+      >
         Why Darch?
       </Text>
       <Flex alignItems={"start"} direction={["column", "column", "row"]}>
         {characteristics.map(({ top, tittle, description }, index) => (
-          <Characteristic key={index} top={top} tittle={tittle} description={description} />
+          <Characteristic
+            key={index}
+            top={top}
+            tittle={tittle}
+            description={description}
+          />
         ))}
       </Flex>
     </VStack>
