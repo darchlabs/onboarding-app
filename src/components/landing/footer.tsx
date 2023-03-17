@@ -26,7 +26,13 @@ export function Footer(): JSX.Element {
           <Text color={"gray.500"} fontSize={["xl", "xl", "xl"]} pt={5}>
             Why Darch?
           </Text>
-          <Text color={"gray.500"} fontSize={["xl", "xl", "xl"]} pt={[1, 0]}>
+          <Text
+            color={"gray.500"}
+            fontSize={["xl", "xl", "xl"]}
+            pt={[1, 0]}
+            cursor={"pointer"}
+            onClick={() => window.location.replace("https://docs.darchlabs.com")}
+          >
             Docs
           </Text>
           <Text

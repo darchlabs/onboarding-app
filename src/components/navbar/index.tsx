@@ -29,7 +29,12 @@ export function Navbar() {
             <Text fontWeight={"bold"} color="pink.400" pr={"2.5"}>
               WHY DARCH?
             </Text>
-            <Text fontWeight={"bold"} color="pink.400">
+            <Text
+              fontWeight={"bold"}
+              color="pink.400"
+              cursor={"pointer"}
+              onClick={() => window.location.replace("https://docs.darchlabs.com")}
+            >
               DOCS
             </Text>
           </HStack>
