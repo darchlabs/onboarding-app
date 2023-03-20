@@ -1,4 +1,12 @@
-import { HStack, VStack, Text, Button, Icon, Box, Flex } from "@chakra-ui/react";
+import {
+  HStack,
+  VStack,
+  Text,
+  Button,
+  Icon,
+  Box,
+  Flex,
+} from "@chakra-ui/react";
 import LogoHIcon from "../icon/logo-h";
 import { FaTwitter, FaMediumM, FaGithub } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
@@ -21,7 +29,11 @@ export function Footer(): JSX.Element {
       pb={[12, 12, 14]}
     >
       <Flex direction={["column", "column", "row"]} w={"full"}>
-        <VStack flex={["auto", "auto", 0.4]} alignItems={["center", "center", "start"]} pr={[0, 0, 5]}>
+        <VStack
+          flex={["auto", "auto", 0.4]}
+          alignItems={["center", "center", "start"]}
+          pr={[0, 0, 5]}
+        >
           <Icon as={LogoHIcon} w={"235px"} h={"51px"} />
           <Text color={"gray.500"} fontSize={["xl", "xl", "xl"]} pt={5}>
             Why Darch?
@@ -31,7 +43,9 @@ export function Footer(): JSX.Element {
             fontSize={["xl", "xl", "xl"]}
             pt={[1, 0]}
             cursor={"pointer"}
-            onClick={() => window.location.replace("https://docs.darchlabs.com")}
+            onClick={() =>
+              window.location.replace("https://docs.darchlabs.com/docs/intro")
+            }
           >
             Docs
           </Text>
@@ -55,19 +69,25 @@ export function Footer(): JSX.Element {
               as={FaGithub}
               boxSize={[8, 8, 6]}
               cursor={"pointer"}
-              onClick={() => window.location.replace("https://github.com/darchlabs")}
+              onClick={() =>
+                window.location.replace("https://github.com/darchlabs")
+              }
             />
             <Icon
               as={FaTwitter}
               boxSize={[8, 8, 6]}
               cursor={"pointer"}
-              onClick={() => window.location.replace("https://twitter.com/darchlabs")}
+              onClick={() =>
+                window.location.replace("https://twitter.com/darchlabs")
+              }
             />
             <Icon
               as={FaMediumM}
               boxSize={[8, 8, 6]}
               cursor={"pointer"}
-              onClick={() => window.location.replace("https://medium.com/@darchlabs")}
+              onClick={() =>
+                window.location.replace("https://medium.com/@darchlabs")
+              }
             />
           </HStack>
         </VStack>
@@ -77,10 +97,19 @@ export function Footer(): JSX.Element {
           flex={["auto", "auto", 0.6]}
           pt={[8, 8, 0]}
         >
-          <Text letterSpacing={"wider"} fontWeight={"bold"} fontSize={["2xl", "2xl", "3xl"]} color={"blackAlpha.800"}>
+          <Text
+            letterSpacing={"wider"}
+            fontWeight={"bold"}
+            fontSize={["2xl", "2xl", "3xl"]}
+            color={"blackAlpha.800"}
+          >
             Get in touch
           </Text>
-          <Text fontSize={["lg", "lg", "xl"]} color={"gray.500"} textAlign={["center", "center", "center", "left"]}>
+          <Text
+            fontSize={["lg", "lg", "xl"]}
+            color={"gray.500"}
+            textAlign={["center", "center", "center", "left"]}
+          >
             Join us and learn from the best Web3 builder community
           </Text>
           <Box pt={2}>
@@ -95,7 +124,12 @@ export function Footer(): JSX.Element {
           </Box>
         </VStack>
       </Flex>
-      <Text color={"gray.500"} letterSpacing={"tight"} pt={[8, 5]} textAlign={["center", "center", "start"]}>
+      <Text
+        color={"gray.500"}
+        letterSpacing={"tight"}
+        pt={[8, 5]}
+        textAlign={["center", "center", "start"]}
+      >
         DarchLabs 2023 © All Rights Reserved
       </Text>
     </VStack>

@@ -21,7 +21,11 @@ export function Navbar() {
       boxShadow={"lg"}
       zIndex={"1"}
     >
-      <Icon as={LogoIcon} w={["81px", "101px", "135px"]} h={["40px", "50px", "66px"]} />
+      <Icon
+        as={LogoIcon}
+        w={["81px", "101px", "135px"]}
+        h={["40px", "50px", "66px"]}
+      />
 
       <HStack>
         <Hide below="md">
@@ -33,7 +37,9 @@ export function Navbar() {
               fontWeight={"bold"}
               color="pink.400"
               cursor={"pointer"}
-              onClick={() => window.location.replace("https://docs.darchlabs.com")}
+              onClick={() =>
+                window.location.replace("https://docs.darchlabs.com/docs/intro")
+              }
             >
               DOCS
             </Text>
