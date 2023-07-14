@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { VStack, Text, Box, HStack, Select, Hide } from "@chakra-ui/react";
+import {useState} from "react";
+import {VStack, Text, Box, HStack, Select, Hide} from "@chakra-ui/react";
 import ReactPlayer from "react-player/youtube";
 
 const steps: {
   name: string;
   url: string;
 }[] = [
-  {
-    name: "synchronizers",
-    url: "https://youtu.be/r2EHAjZ2Nmc",
-  },
-  {
-    name: "jobs",
-    url: "https://youtu.be/265en6eZ4BE",
-  },
-  {
-    name: "nodes",
-    url: "https://youtu.be/i4DitH9sVk0",
-  },
-];
+    {
+      name: "synchronizers",
+      url: "https://youtu.be/r2EHAjZ2Nmc",
+    },
+    {
+      name: "jobs",
+      url: "https://youtu.be/265en6eZ4BE",
+    },
+    {
+      name: "nodes",
+      url: "https://youtu.be/i4DitH9sVk0",
+    },
+  ];
 
 function Stepper({
   url,
@@ -123,7 +123,7 @@ export function Showcase(): JSX.Element {
         pl={[5, 10]}
         pr={[5, 10]}
       >
-        Work autonomously in the cloud you love
+        Optimize and customize your workflow to your needs
       </Text>
       <Stepper url={steps[currentIndex].url} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
     </VStack>

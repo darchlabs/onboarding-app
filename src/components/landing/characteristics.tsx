@@ -1,4 +1,4 @@
-import { Box, VStack, Text, Flex } from "@chakra-ui/react";
+import {Box, VStack, Text, Flex} from "@chakra-ui/react";
 
 function Characteristic({
   top,
@@ -20,7 +20,7 @@ function Characteristic({
         // backgroundColor: "red",
         paddingTop: [0, 0, 10],
       }}
-      // bgColor={"green"}
+    // bgColor={"green"}
     >
       <Box height={"1px"} bgColor={"blackAlpha.200"} w={"full"}></Box>
       <Text
@@ -50,39 +50,42 @@ function Characteristic({
   );
 }
 
-const characteristics: { top: string; tittle: string | JSX.Element; description: string }[] = [
+const characteristics: {top: string; tittle: string | JSX.Element; description: string}[] = [
   {
     top: "synchronizers",
     tittle: (
       <Text as={"span"}>
-        Fetch and{" "}
         <Text as={"span"} color={"pink.400"}>
-          synch on-chain
+          sync
         </Text>{" "}
-        data in a fast and{" "}
+        and access{" "}
         <Text as={"span"} color={"pink.400"}>
-          easy
+          on-chain data
+        </Text>{" "}
+        making it faster and{" "}
+        <Text as={"span"} color={"pink.400"}>
+          better
         </Text>
       </Text>
     ),
-    description: "Access on-chain data easily, speedup dApp development, and improve experience.",
+    description: "Speedup development, improve the experience, and deliver better decentralized applications.",
   },
   {
     top: "jobs",
     tittle: (
       <Text as={"span"}>
-        Schedule{" "}
+        Perform{" "}
         <Text as={"span"} color={"pink.400"}>
           smart contract
         </Text>{" "}
-        interaction with{" "}
+        interactions with{" "}
         <Text as={"span"} color={"pink.400"}>
           no effort
         </Text>
       </Text>
     ),
     description:
-      "Perform smart contract operations on a set schedule based making dApps more autonomous and self-sufficient.",
+      "Schedule operations and make autonomous and self-sufficient smart contracts.",
   },
   {
     top: "nodes",
@@ -100,7 +103,7 @@ const characteristics: { top: string; tittle: string | JSX.Element; description:
       </Text>
     ),
     description:
-      "Simplify the process of running, maintaining, and managing nodes for web3 development and production infrastructure.",
+      "Run, maintain, and manage nodes for web3 development and production infrastructure.",
   },
 ];
 
@@ -111,7 +114,7 @@ export function Characteristics(): JSX.Element {
         Why Darch?
       </Text>
       <Flex alignItems={"start"} direction={["column", "column", "row"]}>
-        {characteristics.map(({ top, tittle, description }, index) => (
+        {characteristics.map(({top, tittle, description}, index) => (
           <Characteristic key={index} top={top} tittle={tittle} description={description} />
         ))}
       </Flex>
