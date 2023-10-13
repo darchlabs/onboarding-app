@@ -33,7 +33,13 @@ function Characteristic({
       >
         {top}
       </Text>
-      <Text fontWeight={"bold"} fontSize={["xl", "xl", "2xl"]} color={"blackAlpha.800"} lineHeight={"30px"} pt={3}>
+      <Text
+        fontWeight={"bold"}
+        fontSize={["xl", "xl", "2xl"]}
+        color={"blackAlpha.800"}
+        lineHeight={"30px"}
+        pt={3}
+      >
         {tittle}
       </Text>
       <Text
@@ -66,6 +72,7 @@ const characteristics: {top: string; tittle: string | JSX.Element; description: 
         <Text as={"span"} color={"pink.400"}>
           better
         </Text>
+        way
       </Text>
     ),
     description: "Speedup development, improve the experience, and deliver better decentralized applications.",
@@ -110,7 +117,13 @@ const characteristics: {top: string; tittle: string | JSX.Element; description: 
 export function Characteristics(): JSX.Element {
   return (
     <VStack bgColor={"white"} pl={5} pr={5}>
-      <Text pt={40} pb={10} lineHeight={"24px"} fontSize={["3xl", "4xl"]} color={"pink.400"}>
+      <Text
+        pt={40}
+        pb={10}
+        lineHeight={"24px"}
+        fontSize={["3xl", "4xl"]}
+        color={"pink.400"}
+      >
         Why Darch?
       </Text>
       <Flex alignItems={"start"} direction={["column", "column", "row"]}>

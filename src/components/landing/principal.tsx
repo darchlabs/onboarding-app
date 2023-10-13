@@ -10,20 +10,41 @@ export function Principal() {
 
   return (
     <VStack w={"full"} h={"full"} bgColor={"white"}>
-      <VStack spacing={20} bgColor={"white"} w={"full"} h={"full"} display={"flex"} alignContent={"center"}>
+      <VStack
+        spacing={20}
+        bgColor={"white"}
+        w={"full"}
+        h={"full"}
+        display={"flex"}
+        alignContent={"center"}
+      >
         <Text textAlign={"center"} pt={48}>
-          <Text fontSize={["3xl", "4xl", "5xl"]} fontWeight="bold" color="pink.400">
+          <Text
+            fontSize={["3xl", "4xl", "5xl"]}
+            fontWeight="bold"
+            color="pink.400"
+          >
             Revolutionizing Web3
           </Text>
-          <Text fontSize={["3xl", "4xl", "5xl"]} fontWeight="bold" color="blackAlpha.800" mt={["0", "-2%"]}>
+          <Text
+            fontSize={["3xl", "4xl", "5xl"]}
+            fontWeight="bold"
+            color="blackAlpha.800"
+            mt={["0", "-2%"]}
+          >
             Infrastructure and Development
           </Text>
           <Text color="gray.500" fontSize={["xl", "2xl"]} fontWeight="light">
-            Build better, faster and autonomous decentralized applications
+            Build better and faster decentralized applications
           </Text>
         </Text>
 
-        <Flex direction={["column", "row"]} width={["full", "auto"]} pl={[10, 5, 0]} pr={[10, 5, 0]}>
+        <Flex
+          direction={["column", "row"]}
+          width={["full", "auto"]}
+          pl={[10, 5, 0]}
+          pr={[10, 5, 0]}
+        >
           <Button
             size={"lg"}
             colorScheme={"pink"}
