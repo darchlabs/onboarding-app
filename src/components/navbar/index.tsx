@@ -1,59 +1,46 @@
-import { Button, HStack, Icon, Text, Hide } from "@chakra-ui/react";
-import LogoIcon from "../icon/logo";
-// import { useNavigate } from "react-router-dom";
+import { Link, HStack, Icon, Text, Hide } from "@chakra-ui/react";
+import LogoIcon from "../icon/logo-white";
 
 // TODO(ca): remove when we are in really production mode
 const formURL = "https://forms.gle/FsbU18VJzuJgoQjp8";
 
 export function Navbar() {
-  // define hooks
-  // const navigate = useNavigate();
-
   return (
     <HStack
       w={"full"}
-      bgColor="white"
+      position={"absolute"}
       justifyContent={"space-between"}
       pl={[7, 10]}
       pr={[7, 10]}
       pt={[4, 5]}
       pb={[4, 5]}
-      boxShadow={"lg"}
       zIndex={"1"}
     >
       <Icon
         as={LogoIcon}
-        w={["81px", "101px", "135px"]}
-        h={["40px", "50px", "66px"]}
+        w={["110px", "110px", "135px"]}
+        h={["55px", "55px", "66px"]}
       />
 
       <HStack>
-        <Hide below="md">
-          <HStack pr={"5"}>
-            <Text fontWeight={"bold"} color="pink.400" pr={"2.5"}>
+        <HStack pr={"5"}>
+          <Hide below="md">
+            <Text fontWeight={"bold"} color="white" pr={"2.5"} fontSize={"xl"}>
               WHY DARCH?
             </Text>
+          </Hide>
+          <Link href="https://docs.darchlabs.com/docs/intro" _hover={{
+            borderColor: "transparent"
+          }}>
             <Text
               fontWeight={"bold"}
-              color="pink.400"
-              cursor={"pointer"}
-              onClick={() =>
-                window.location.replace("https://docs.darchlabs.com/docs/intro")
-              }
+              color="white"
+              fontSize={"xl"}
             >
               DOCS
             </Text>
-          </HStack>
-        </Hide>
-
-        <Button
-          colorScheme={"pink"}
-          color={"pink.400"}
-          variant={"outline"}
-          onClick={() => window.location.replace(formURL)}
-        >
-          Contact Us
-        </Button>
+          </Link>
+        </HStack>
       </HStack>
     </HStack>
   );

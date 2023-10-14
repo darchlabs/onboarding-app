@@ -2,11 +2,11 @@ import {Box, VStack, Text, Flex} from "@chakra-ui/react";
 
 function Characteristic({
   top,
-  tittle,
+  title,
   description,
 }: {
   top: string;
-  tittle: string | JSX.Element;
+  title: string | JSX.Element;
   description: string;
 }): JSX.Element {
   return (
@@ -17,10 +17,8 @@ function Characteristic({
       w={"full"}
       alignItems={"start"}
       _first={{
-        // backgroundColor: "red",
         paddingTop: [0, 0, 10],
       }}
-    // bgColor={"green"}
     >
       <Box height={"1px"} bgColor={"blackAlpha.200"} w={"full"}></Box>
       <Text
@@ -40,7 +38,7 @@ function Characteristic({
         lineHeight={"30px"}
         pt={3}
       >
-        {tittle}
+        {title}
       </Text>
       <Text
         fontWeight={"light"}
@@ -56,13 +54,13 @@ function Characteristic({
   );
 }
 
-const characteristics: {top: string; tittle: string | JSX.Element; description: string}[] = [
+const characteristics: {top: string; title: string | JSX.Element; description: string}[] = [
   {
     top: "synchronizers",
-    tittle: (
+    title: (
       <Text as={"span"}>
         <Text as={"span"} color={"pink.400"}>
-          sync
+          Sync
         </Text>{" "}
         and access{" "}
         <Text as={"span"} color={"pink.400"}>
@@ -78,8 +76,26 @@ const characteristics: {top: string; tittle: string | JSX.Element; description: 
     description: "Speedup development, improve the experience, and deliver better decentralized applications.",
   },
   {
+    top: "webhooks",
+    title: (
+      <Text as={"span"}>
+        Connect{" "}
+        <Text as={"span"} color={"pink.400"}>
+        servers
+        </Text>{" "}
+        through{" "}
+        <Text as={"span"} color={"pink.400"}>
+        synchronizers
+        </Text>{" "}
+        with ease
+      </Text>
+    ),
+    description:
+      "Interact seamlessly with other smart contracts for holistic web3 solutions.",
+  },
+  {
     top: "jobs",
-    tittle: (
+    title: (
       <Text as={"span"}>
         Perform{" "}
         <Text as={"span"} color={"pink.400"}>
@@ -94,31 +110,13 @@ const characteristics: {top: string; tittle: string | JSX.Element; description: 
     description:
       "Schedule operations and make autonomous and self-sufficient smart contracts.",
   },
-  {
-    top: "nodes",
-    tittle: (
-      <Text as={"span"}>
-        Create and{" "}
-        <Text as={"span"} color={"pink.400"}>
-          manage nodes
-        </Text>{" "}
-        easier and{" "}
-        <Text as={"span"} color={"pink.400"}>
-          faster
-        </Text>{" "}
-        than ever
-      </Text>
-    ),
-    description:
-      "Run, maintain, and manage nodes for web3 development and production infrastructure.",
-  },
 ];
 
 export function Characteristics(): JSX.Element {
   return (
     <VStack bgColor={"white"} pl={5} pr={5}>
       <Text
-        pt={40}
+        pt={20}
         pb={10}
         lineHeight={"24px"}
         fontSize={["3xl", "4xl"]}
@@ -127,8 +125,8 @@ export function Characteristics(): JSX.Element {
         Why Darch?
       </Text>
       <Flex alignItems={"start"} direction={["column", "column", "row"]}>
-        {characteristics.map(({top, tittle, description}, index) => (
-          <Characteristic key={index} top={top} tittle={tittle} description={description} />
+        {characteristics.map(({top, title, description}, index) => (
+          <Characteristic key={index} top={top} title={title} description={description} />
         ))}
       </Flex>
     </VStack>
