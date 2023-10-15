@@ -10,15 +10,11 @@ import {
 import LogoHIcon from "../icon/logo-h";
 import { FaTwitter, FaMediumM, FaGithub } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
-// import { useNavigate } from "react-router-dom";
 
 // TODO(ca): remove when we are in really production mode
 const formURL = "https://forms.gle/FsbU18VJzuJgoQjp8";
 
 export function Footer(): JSX.Element {
-  // define hooks
-  // const navigate = useNavigate();
-
   return (
     <VStack
       alignItems={["center", "center", "start"]}
